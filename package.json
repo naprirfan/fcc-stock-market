@@ -1,0 +1,33 @@
+{
+  "name": "fcc-stock-market",
+  "version": "1.0.0",
+  "description": "Freecodecamp's Challenge",
+  "main": "server/server.js",
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "express": "^4.13.4",
+    "socket.io": "^1.4.6"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-uglify": "^1.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naprirfan/fcc-stock-market.git"
+  },
+  "keywords": [
+    "Stock",
+    "market"
+  ],
+  "author": "Muhammad Irfan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naprirfan/fcc-stock-market/issues"
+  },
+  "homepage": "https://github.com/naprirfan/fcc-stock-market#readme"
+}

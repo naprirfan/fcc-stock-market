@@ -6,11 +6,24 @@
 	<link rel="stylesheet" type="text/css" href="/dist/css/main.css">
 </head>
 <body>
-	<div id="stockList"></div>
-	<form>
-  		<input class="input-group" id="stockCode" type="text" autocomplete="off" />
-  		<input type="submit" class="btn btn-primary" value="Send!">
-    </form>
+	<div class="container well" id="chart">Helloo</div>
+	<div class="container">
+		<form>
+	  		<div class="input-group">
+		      <input id="stockCode" type="text" class="form-control" placeholder="Type your stock code. E.g : AAPL, GOOG, IBM">
+		      <span class="input-group-btn">
+		        <button type="submit" class="btn btn-default">Go!</button>
+		      </span>
+		    </div>
+	    </form>
+	    <br />
+	    <div class="alert alert-danger"></div>
+    </div>
+    <div class="container">
+    	<div id="loader"></div>
+    	<div class="row" id="stockListContainer"></div>
+    </div>
+    <!--SCRIPTS-->
 	<script src="/socket.io/socket.io.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type="text/javascript" src="/dist/js/script.min.js"></script>

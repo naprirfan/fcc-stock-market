@@ -2,6 +2,8 @@ var socket = io();
 var dataset = {};
 
 $('form').submit(function(){
+	if ($('#stockCode').val() == "") return;
+
 	socket.emit('addStockCode', $('#stockCode').val());
 	$('#stockCode').val('');
 	showStockListLoader();
@@ -29,6 +31,7 @@ socket.on('error', function(msg){
 socket.on('globalNotification', function(msg) {
 	//insert into dataset
 	dataset = msg;
+	console.log(dataset);
 	renderStockList(dataset);
 	hideStockListLoader();
 });
@@ -61,6 +64,9 @@ function renderStockList(msg) {
 	$('#stockListContainer').empty();
 
 	for (var key in msg) {
+		if (msg[key] === null) {
+			continue;
+		}
 
 		var row = $('<div />',{
 			class: "row"

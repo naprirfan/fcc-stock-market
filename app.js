@@ -35,7 +35,7 @@ http.listen((process.env.PORT || 5000), function(){
 });
 
 function removeStockData(msg) {
-	dataset[msg] = null;
+	delete dataset[msg];
 	io.emit('removeStockCodeSucceed', msg);
 }
 

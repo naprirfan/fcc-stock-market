@@ -2,11 +2,17 @@
 <html>
 <head>
 	<title>Stock Market Price</title>
-	<link rel="stylesheet" type="text/css" href="dist/css/main.css">
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/dist/css/main.css">
 </head>
 <body>
-	Hello world!
+	<div id="stockList"></div>
+	<form>
+  		<input class="input-group" id="stockCode" type="text" autocomplete="off" />
+  		<input type="submit" class="btn btn-primary" value="Send!">
+    </form>
+	<script src="/socket.io/socket.io.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript" src="dist/js/script.min.js"></script>
+	<script type="text/javascript" src="/dist/js/script.min.js"></script>
 </body>
 </html>

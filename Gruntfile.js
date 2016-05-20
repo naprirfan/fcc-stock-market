@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         separator: ';',
       },
       dist: {
-        src: ['src/js/_graph.js', 'src/js/main.js'],
+        src: ['src/js/_graph.js', 'src/js/_list.js', 'src/js/main.js'],
         dest: 'dist/js/script.js',
       },
     },
@@ -28,8 +28,14 @@ module.exports = function(grunt) {
       },
     },
     watch: {
-      files: ['src/js/main.js', 'src/js/_graph.js', 'src/sass/main.scss'],
-      tasks: ['concat', 'uglify', 'compass']
+      js : {
+        files: ['src/js/*.js', 'src/sass/main.scss'],
+        tasks: ['concat', 'uglify']  
+      },
+      sass: {
+        files: ['src/sass/*.scss'],
+        tasks: ['compass']
+      }
     }
 
   });

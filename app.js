@@ -34,13 +34,29 @@ http.listen((process.env.PORT || 5000), function(){
 	console.log('listening on port '+(process.env.PORT || 5000)+'....');
 });
 
+function getLastYearTime() {
+
+    var date = new Date();
+
+    var year = +(date.getFullYear()) - 1;
+
+    var month = date.getMonth() + 1;
+    month = (month < 10 ? "0" : "") + month;
+
+    var day  = date.getDate();
+    day = (day < 10 ? "0" : "") + day;
+
+    return year + "-" + month + "-" + day;
+
+}
+
 function removeStockData(msg) {
 	delete dataset[msg];
 	io.emit('removeStockCodeSucceed', msg);
 }
 
 function fetchStockData(msg) {
-	var url = STOCK_API_URL + msg + ".json?api_key=" + process.env.API_KEY;
+	var url = STOCK_API_URL + msg + ".json?start_date="+ getLastYearTime() +"&api_key=" + process.env.API_KEY;
 
 	console.log("requesting " + msg);
 	thirdPartyRequest.get({url: url}, function(error, response, body){

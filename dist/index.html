@@ -6,11 +6,14 @@
 	<link rel="stylesheet" type="text/css" href="/dist/css/main.css">
 </head>
 <body>
-	<div class="container well" id="chart">Helloo</div>
+	<h1 class="text-center">US Stocks Closing Price</h1>
+	<div class="container well" id="chart">
+		<svg></svg>
+	</div>
 	<div class="container">
 		<form>
 	  		<div class="input-group">
-		      <input id="stockCode" type="text" class="form-control" placeholder="Type your stock code. E.g : AAPL, GOOG, IBM">
+		      <input id="stockCode" type="text" class="form-control" placeholder="Type stock code to see price history. E.g : AAPL, GOOG, IBM">
 		      <span class="input-group-btn">
 		        <button type="submit" class="btn btn-default">Go!</button>
 		      </span>
@@ -23,6 +26,13 @@
     	<div id="loader"></div>
     	<div class="row" id="stockListContainer"></div>
     </div>
+    <footer> 
+    	<div class="container text-center">
+    		Created by <a href="http://github.com/naprirfan">@naprirfan</a>
+    	</div>
+    	<br />
+	</footer>
+
     <!--SCRIPTS-->
 	<script src="/socket.io/socket.io.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>

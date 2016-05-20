@@ -58,7 +58,6 @@ function removeStockData(msg) {
 function fetchStockData(msg) {
 	var url = STOCK_API_URL + msg + ".json?start_date="+ getLastYearTime() +"&api_key=" + process.env.API_KEY;
 
-	console.log("requesting " + msg);
 	thirdPartyRequest.get({url: url}, function(error, response, body){
 		if(!error && response.statusCode == 200) {
 			var result = JSON.parse(body);
@@ -69,7 +68,6 @@ function fetchStockData(msg) {
 			io.emit('addStockCodeSucceed', newData);
 		}
 		else {
-			console.log("error");
 			io.emit('error', "Data not found. Please check whether the symbol is incorrect");
 		}
 	});

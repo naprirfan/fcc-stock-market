@@ -29,7 +29,6 @@ socket.on('globalNotification', function(msg) {
 	//insert into dataset
 	if (!$.isEmptyObject(msg)) {
 		dataset = msg;
-		console.log(dataset);
 		lineColors = _getLineColors(dataset);
 		renderStockList(dataset, lineColors);
 		renderGraph(dataset, lineColors);

@@ -52,15 +52,14 @@ function renderGraph(dataset, lineColors) {
 	        .attr("transform", 
 	              "translate(" + margin.left + "," + margin.top + ")");
 
-
-	for (var key in dataset) {
+  	for (var key in dataset) {
+		//rendering
 		var arr = dataset[key].dataset.data;
 		var data = [];
 		for (var i = 0; i < arr.length; i++) {
 			data.push({date: arr[i][0], close: arr[i][4]});
 		}
 
-		//rendering
 		data.forEach(function(d) {
 	        d.date = parseDate(d.date);
 	        d.close = +d.close;
@@ -75,8 +74,8 @@ function renderGraph(dataset, lineColors) {
 	        .attr("class", "line")
 	        .attr("stroke", lineColors[key])
 	        .attr("d", valueline(data));
-	}
-	
+			
+	}//end of loop
 
     // Add the X Axis
     svg.append("g")
